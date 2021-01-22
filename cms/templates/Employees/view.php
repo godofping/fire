@@ -16,23 +16,23 @@
     </aside>
     <div class="column-responsive column-80">
         <div class="employees view content">
-            <h3><?= h($employee->employeeid) ?></h3>
+            <h3><?= ($employee->employeeid) ?></h3>
             <table>
                 <tr>
-                    <th><?= __('Fullname') ?></th>
+                    <th><?= __('Full Name') ?></th>
                     <td><?= h($employee->fullname) ?></td>
                 </tr>
                 <tr>
-                    <th><?= __('Contactnumber') ?></th>
+                    <th><?= __('Contact Number') ?></th>
                     <td><?= h($employee->contactnumber) ?></td>
                 </tr>
                 <tr>
-                    <th><?= __('Employeeid') ?></th>
-                    <td><?= $this->Number->format($employee->employeeid) ?></td>
+                    <th><?= __('Position') ?></th>
+                    <td><?= $employee->position->position ?></td>
                 </tr>
                 <tr>
-                    <th><?= __('Position') ?></th>
-                    <td><?= $employee->has('position') ? $this->Html->link($employee->position->position, ['controller' => 'Position', 'action' => 'view', $employee->position->positionid]) : '' ?></td>
+                    <th><?= __('Department') ?></th>
+                    <td><?= $employee->department->department ?></td>
                 </tr>
             </table>
         </div>

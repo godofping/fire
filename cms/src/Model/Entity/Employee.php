@@ -10,8 +10,11 @@ use Cake\ORM\Entity;
  *
  * @property int $employeeid
  * @property int|null $positionid
+ * @property int|null $departmentid
  * @property string|null $fullname
  * @property string|null $contactnumber
+ *
+ * @property \App\Model\Entity\Position $position
  */
 class Employee extends Entity
 {
@@ -26,7 +29,9 @@ class Employee extends Entity
      */
     protected $_accessible = [
         'positionid' => true,
+        'departmentid' => true,
         'fullname' => true,
         'contactnumber' => true,
+        'position' => true,
     ];
 }

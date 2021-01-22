@@ -22,9 +22,10 @@
             <fieldset>
                 <legend><?= __('Edit Employee') ?></legend>
                 <?php
-                    echo $this->Form->control('positionid', ['options' => $positions]);
-                    echo $this->Form->control('fullname');
-                    echo $this->Form->control('contactnumber');
+                    echo $this->Form->control('positionid', ['label' => 'Position', 'options' => $positions, 'empty' => false]);
+                    echo $this->Form->control('departmentid', ['label' => 'Department', 'options' => $departments, 'empty' => false]);
+                    echo $this->Form->control('fullname', ['label' => 'Full Name']);
+                    echo $this->Form->control('contactnumber', ['label' => 'Contact Number']);
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>

@@ -27,6 +27,10 @@
                     <td><?= h($user->password) ?></td>
                 </tr>
                 <tr>
+                    <th><?= __('Userlevel') ?></th>
+                    <td><?= h($user->userlevel) ?></td>
+                </tr>
+                <tr>
                     <th><?= __('Userid') ?></th>
                     <td><?= $this->Number->format($user->userid) ?></td>
                 </tr>

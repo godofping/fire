@@ -21,6 +21,7 @@ class UsersFixture extends TestFixture
         'employeeid' => ['type' => 'integer', 'length' => null, 'unsigned' => false, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
         'username' => ['type' => 'string', 'length' => 60, 'null' => true, 'default' => null, 'collate' => 'latin1_swedish_ci', 'comment' => '', 'precision' => null],
         'password' => ['type' => 'string', 'length' => 60, 'null' => true, 'default' => null, 'collate' => 'latin1_swedish_ci', 'comment' => '', 'precision' => null],
+        'userlevel' => ['type' => 'string', 'length' => 20, 'null' => true, 'default' => null, 'collate' => 'latin1_swedish_ci', 'comment' => '', 'precision' => null],
         '_indexes' => [
             'FK_users' => ['type' => 'index', 'columns' => ['employeeid'], 'length' => []],
         ],
@@ -47,6 +48,7 @@ class UsersFixture extends TestFixture
                 'employeeid' => 1,
                 'username' => 'Lorem ipsum dolor sit amet',
                 'password' => 'Lorem ipsum dolor sit amet',
+                'userlevel' => 'Lorem ipsum dolor ',
             ],
         ];
         parent::init();

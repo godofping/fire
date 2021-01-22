@@ -19,13 +19,16 @@ class EmployeesFixture extends TestFixture
     public $fields = [
         'employeeid' => ['type' => 'integer', 'length' => null, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'autoIncrement' => true, 'precision' => null],
         'positionid' => ['type' => 'integer', 'length' => null, 'unsigned' => false, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
+        'departmentid' => ['type' => 'integer', 'length' => null, 'unsigned' => false, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
         'fullname' => ['type' => 'string', 'length' => 60, 'null' => true, 'default' => null, 'collate' => 'latin1_swedish_ci', 'comment' => '', 'precision' => null],
         'contactnumber' => ['type' => 'string', 'length' => 60, 'null' => true, 'default' => null, 'collate' => 'latin1_swedish_ci', 'comment' => '', 'precision' => null],
         '_indexes' => [
             'FK_employees' => ['type' => 'index', 'columns' => ['positionid'], 'length' => []],
+            'FK_employees1' => ['type' => 'index', 'columns' => ['departmentid'], 'length' => []],
         ],
         '_constraints' => [
             'primary' => ['type' => 'primary', 'columns' => ['employeeid'], 'length' => []],
+            'FK_employees1' => ['type' => 'foreign', 'columns' => ['departmentid'], 'references' => ['departments', 'departmentid'], 'update' => 'restrict', 'delete' => 'restrict', 'length' => []],
             'FK_employees' => ['type' => 'foreign', 'columns' => ['positionid'], 'references' => ['positions', 'positionid'], 'update' => 'restrict', 'delete' => 'restrict', 'length' => []],
         ],
         '_options' => [
@@ -45,6 +48,7 @@ class EmployeesFixture extends TestFixture
             [
                 'employeeid' => 1,
                 'positionid' => 1,
+                'departmentid' => 1,
                 'fullname' => 'Lorem ipsum dolor sit amet',
                 'contactnumber' => 'Lorem ipsum dolor sit amet',
             ],

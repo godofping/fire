@@ -68,6 +68,11 @@ class UsersTable extends Table
             ->maxLength('password', 60)
             ->allowEmptyString('password');
 
+        $validator
+            ->scalar('userlevel')
+            ->maxLength('userlevel', 20)
+            ->allowEmptyString('userlevel');
+
         return $validator;
     }
 

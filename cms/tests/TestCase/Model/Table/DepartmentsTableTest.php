@@ -3,20 +3,20 @@ declare(strict_types=1);
 
 namespace App\Test\TestCase\Model\Table;
 
-use App\Model\Table\EmployeesTable;
+use App\Model\Table\DepartmentsTable;
 use Cake\TestSuite\TestCase;
 
 /**
- * App\Model\Table\EmployeesTable Test Case
+ * App\Model\Table\DepartmentsTable Test Case
  */
-class EmployeesTableTest extends TestCase
+class DepartmentsTableTest extends TestCase
 {
     /**
      * Test subject
      *
-     * @var \App\Model\Table\EmployeesTable
+     * @var \App\Model\Table\DepartmentsTable
      */
-    protected $Employees;
+    protected $Departments;
 
     /**
      * Fixtures
@@ -24,8 +24,7 @@ class EmployeesTableTest extends TestCase
      * @var array
      */
     protected $fixtures = [
-        'app.Employees',
-        'app.Positions',
+        'app.Departments',
     ];
 
     /**
@@ -36,8 +35,8 @@ class EmployeesTableTest extends TestCase
     public function setUp(): void
     {
         parent::setUp();
-        $config = $this->getTableLocator()->exists('Employees') ? [] : ['className' => EmployeesTable::class];
-        $this->Employees = $this->getTableLocator()->get('Employees', $config);
+        $config = $this->getTableLocator()->exists('Departments') ? [] : ['className' => DepartmentsTable::class];
+        $this->Departments = $this->getTableLocator()->get('Departments', $config);
     }
 
     /**
@@ -47,7 +46,7 @@ class EmployeesTableTest extends TestCase
      */
     public function tearDown(): void
     {
-        unset($this->Employees);
+        unset($this->Departments);
 
         parent::tearDown();
     }

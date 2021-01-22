@@ -11,10 +11,11 @@
         <table>
             <thead>
                 <tr>
-                    <th><?= $this->Paginator->sort('employeeid') ?></th>
-                    <th><?= $this->Paginator->sort('position') ?></th>
-                    <th><?= $this->Paginator->sort('fullname') ?></th>
-                    <th><?= $this->Paginator->sort('contactnumber') ?></th>
+                    <th><?= $this->Paginator->sort('ID') ?></th>
+                    <th><?= $this->Paginator->sort('Full Name') ?></th>
+                    <th><?= $this->Paginator->sort('Contact Number') ?></th>
+                    <th><?= $this->Paginator->sort('Position') ?></th>
+                    <th><?= $this->Paginator->sort('Department') ?></th>
                     <th class="actions"><?= __('Actions') ?></th>
                 </tr>
             </thead>
@@ -22,9 +23,10 @@
                 <?php foreach ($employees as $employee): ?>
                 <tr>
                     <td><?= $this->Number->format($employee->employeeid) ?></td>
-                    <td><?= $employee->has('position') ? $this->Html->link($employee->position->position, ['controller' => 'Position', 'action' => 'view', $employee->position->positionid]) : '' ?></td>
                     <td><?= h($employee->fullname) ?></td>
                     <td><?= h($employee->contactnumber) ?></td>
+                    <td><?= $employee->position->position ?></td>
+                    <td><?= $employee->department->department ?></td>
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $employee->employeeid]) ?>
                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $employee->employeeid]) ?>

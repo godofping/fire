@@ -6,15 +6,12 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * User Entity
+ * Department Entity
  *
- * @property int $userid
- * @property int|null $employeeid
- * @property string|null $username
- * @property string|null $password
- * @property string|null $userlevel
+ * @property int $departmentid
+ * @property string|null $department
  */
-class User extends Entity
+class Department extends Entity
 {
     /**
      * Fields that can be mass assigned using newEntity() or patchEntity().
@@ -26,18 +23,6 @@ class User extends Entity
      * @var array
      */
     protected $_accessible = [
-        'employeeid' => true,
-        'username' => true,
-        'password' => true,
-        'userlevel' => true,
-    ];
-
-    /**
-     * Fields that are excluded from JSON versions of the entity.
-     *
-     * @var array
-     */
-    protected $_hidden = [
-        'password',
+        'department' => true,
     ];
 }

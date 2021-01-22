@@ -45,6 +45,11 @@ class EmployeesTable extends Table
             'foreignKey' => 'positionid',
             'joinType' => 'INNER',
         ]);
+
+        $this->belongsTo('Departments', [
+            'foreignKey' => 'departmentid',
+            'joinType' => 'INNER',
+        ]);
     }
 
     /**
@@ -62,6 +67,10 @@ class EmployeesTable extends Table
         $validator
             ->integer('positionid')
             ->allowEmptyString('positionid');
+
+        $validator
+            ->integer('departmentid')
+            ->allowEmptyString('departmentid');
 
         $validator
             ->scalar('fullname')

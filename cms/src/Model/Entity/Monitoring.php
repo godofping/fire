@@ -6,15 +6,17 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * User Entity
+ * Monitoring Entity
  *
- * @property int $userid
- * @property int|null $employeeid
- * @property string|null $username
- * @property string|null $password
- * @property string|null $userlevel
+ * @property int $monitoringid
+ * @property int|null $roomid
+ * @property float|null $temperature
+ * @property float|null $fire
+ * @property float|null $gas
+ * @property float|null $humidity
+ * @property \Cake\I18n\FrozenTime|null $datetime
  */
-class User extends Entity
+class Monitoring extends Entity
 {
     /**
      * Fields that can be mass assigned using newEntity() or patchEntity().
@@ -26,18 +28,11 @@ class User extends Entity
      * @var array
      */
     protected $_accessible = [
-        'employeeid' => true,
-        'username' => true,
-        'password' => true,
-        'userlevel' => true,
-    ];
-
-    /**
-     * Fields that are excluded from JSON versions of the entity.
-     *
-     * @var array
-     */
-    protected $_hidden = [
-        'password',
+        'roomid' => true,
+        'temperature' => true,
+        'fire' => true,
+        'gas' => true,
+        'humidity' => true,
+        'datetime' => true,
     ];
 }

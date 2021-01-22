@@ -20,6 +20,7 @@
                     echo $this->Form->control('employeeid');
                     echo $this->Form->control('username');
                     echo $this->Form->control('password');
+                    echo $this->Form->control('userlevel');
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>
