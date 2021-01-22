@@ -23,12 +23,8 @@
                     <td><?= h($room->room) ?></td>
                 </tr>
                 <tr>
-                    <th><?= __('Roomid') ?></th>
-                    <td><?= $this->Number->format($room->roomid) ?></td>
-                </tr>
-                <tr>
-                    <th><?= __('Floorid') ?></th>
-                    <td><?= $this->Number->format($room->floorid) ?></td>
+                    <th><?= __('Floor') ?></th>
+                    <td><?= h($room->floor->floor) ?></td>
                 </tr>
             </table>
         </div>

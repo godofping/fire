@@ -11,9 +11,9 @@
         <table>
             <thead>
                 <tr>
-                    <th><?= $this->Paginator->sort('roomid') ?></th>
-                    <th><?= $this->Paginator->sort('floorid') ?></th>
+                    <th><?= $this->Paginator->sort('ID') ?></th>
                     <th><?= $this->Paginator->sort('room') ?></th>
+                    <th><?= $this->Paginator->sort('Floor') ?></th>
                     <th class="actions"><?= __('Actions') ?></th>
                 </tr>
             </thead>
@@ -21,8 +21,8 @@
                 <?php foreach ($rooms as $room): ?>
                 <tr>
                     <td><?= $this->Number->format($room->roomid) ?></td>
-                    <td><?= $this->Number->format($room->floorid) ?></td>
-                    <td><?= h($room->room) ?></td>
+                    <td><?= $room->room ?></td>
+                    <td><?= $room->floor->floor ?></td>
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $room->roomid]) ?>
                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $room->roomid]) ?>

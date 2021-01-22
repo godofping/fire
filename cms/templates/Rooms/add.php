@@ -17,8 +17,8 @@
             <fieldset>
                 <legend><?= __('Add Room') ?></legend>
                 <?php
-                    echo $this->Form->control('floorid');
                     echo $this->Form->control('room');
+                    echo $this->Form->control('floorid', ['label' => 'Floor', 'options' => $floors, 'empty' => false]);
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>

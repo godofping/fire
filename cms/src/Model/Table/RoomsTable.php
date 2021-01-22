@@ -38,8 +38,13 @@ class RoomsTable extends Table
         parent::initialize($config);
 
         $this->setTable('rooms');
-        $this->setDisplayField('roomid');
+        $this->setDisplayField('room');
         $this->setPrimaryKey('roomid');
+
+        $this->belongsTo('Floors', [
+            'foreignKey' => 'floorid',
+            'joinType' => 'INNER',
+        ]);
     }
 
     /**

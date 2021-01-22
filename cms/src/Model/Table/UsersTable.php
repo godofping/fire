@@ -38,8 +38,13 @@ class UsersTable extends Table
         parent::initialize($config);
 
         $this->setTable('users');
-        $this->setDisplayField('userid');
+        $this->setDisplayField('user');
         $this->setPrimaryKey('userid');
+
+        $this->belongsTo('Employees', [
+            'foreignKey' => 'employeeid',
+            'joinType' => 'INNER',
+        ]);
     }
 
     /**

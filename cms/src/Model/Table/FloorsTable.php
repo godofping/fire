@@ -38,7 +38,7 @@ class FloorsTable extends Table
         parent::initialize($config);
 
         $this->setTable('floors');
-        $this->setDisplayField('floorid');
+        $this->setDisplayField('floor');
         $this->setPrimaryKey('floorid');
     }
 

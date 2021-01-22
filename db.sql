@@ -23,9 +23,11 @@ CREATE TABLE `departments` (
   `departmentid` int(6) NOT NULL AUTO_INCREMENT,
   `department` varchar(60) DEFAULT NULL,
   PRIMARY KEY (`departmentid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 /*Data for the table `departments` */
+
+insert  into `departments`(`departmentid`,`department`) values (1,'Outpatient Department'),(2,'IT Department');
 
 /*Table structure for table `employees` */
 
@@ -42,11 +44,11 @@ CREATE TABLE `employees` (
   KEY `FK_employees1` (`departmentid`),
   CONSTRAINT `FK_employees` FOREIGN KEY (`positionid`) REFERENCES `positions` (`positionid`),
   CONSTRAINT `FK_employees1` FOREIGN KEY (`departmentid`) REFERENCES `departments` (`departmentid`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
 /*Data for the table `employees` */
 
-insert  into `employees`(`employeeid`,`positionid`,`departmentid`,`fullname`,`contactnumber`) values (3,4,NULL,'Rex','09754363944'),(4,NULL,NULL,'',''),(5,NULL,NULL,'','');
+insert  into `employees`(`employeeid`,`positionid`,`departmentid`,`fullname`,`contactnumber`) values (6,4,1,'Rey Yes','09754363454'),(7,6,2,'Albert Yale','09754362522'),(8,5,2,'te1','s1'),(9,5,2,'test','test');
 
 /*Table structure for table `floors` */
 
@@ -56,9 +58,11 @@ CREATE TABLE `floors` (
   `floorid` int(6) NOT NULL AUTO_INCREMENT,
   `floor` varchar(60) DEFAULT NULL,
   PRIMARY KEY (`floorid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 /*Data for the table `floors` */
+
+insert  into `floors`(`floorid`,`floor`) values (1,'First Floor'),(2,'Second Floor');
 
 /*Table structure for table `monitorings` */
 
@@ -104,9 +108,11 @@ CREATE TABLE `rooms` (
   PRIMARY KEY (`roomid`),
   KEY `FK_rooms` (`floorid`),
   CONSTRAINT `FK_rooms` FOREIGN KEY (`floorid`) REFERENCES `floors` (`floorid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 /*Data for the table `rooms` */
+
+insert  into `rooms`(`roomid`,`floorid`,`room`) values (1,2,'test sf'),(2,1,'tae ff');
 
 /*Table structure for table `users` */
 
